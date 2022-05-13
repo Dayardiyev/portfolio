@@ -261,8 +261,8 @@ p{
 }
 
 .side-info-icon img:hover{
-	transition: .2s all;
-	transform: scale(1.1);
+	transition: .3s all;
+	transform: scale(1.05);
 }
 
 .side-info-content:nth-child(1){
