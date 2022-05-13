@@ -538,7 +538,7 @@ p{
 
 /* Blogs ================================================================================ */
 
-.content-blog{
+/*.content-blog{
 	height: 1180px;
 }
 
@@ -560,7 +560,7 @@ p{
 .content-item-blog:hover .content-item-content{
 	opacity: 0.9;
 	transform: scale(1.03);
-}
+}*/
 
 /* Contact =============================================================================== */
 
@@ -569,7 +569,7 @@ p{
 }
 
 .contact-box{
-	margin-top: 60px;
+	margin-top: 50px;
 	height: 720px;
 	border: 2px solid #212425;
 	border-radius: 20px;
