@@ -535,33 +535,6 @@ p{
 	font-weight: 500;
 }
 
-
-/* Blogs ================================================================================ */
-
-/*.content-blog{
-	height: 1180px;
-}
-
-.content-inner-blog{
-	margin-top: 60px;
-}
-
-.content-item-blog{
-	position: relative;
-	grid-template-areas: none;
-	height: 455px;
-}
-
-.content-item-blog p{
-	font-size: 14px;
-	padding-top: 10px;
-}
-
-.content-item-blog:hover .content-item-content{
-	opacity: 0.9;
-	transform: scale(1.03);
-}*/
-
 /* Contact =============================================================================== */
 
 .content-contact{
