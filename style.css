@@ -2,9 +2,9 @@
 	box-sizing: border-box;
 }
 
-
 body{
-	background: url(img/bg.jpg) no-repeat center center fixed;
+	background: url(img/bg.jpg) no-repeat center center;
+	background-color: #000;
 	background-size: cover;
 	margin: 0;
 	color: #fff;
@@ -602,6 +602,10 @@ p{
 	.content-title-bar img{
 		width: 500px;
 	}
+
+	.content-inner{
+		grid-template-columns: 55% 45%;
+	}
 }
 
 
@@ -634,7 +638,7 @@ p{
 
 	.side{
 		margin: 0 auto;
-		width: 50%;
+		/*width: 50%;*/
 		height: 9.375rem;
 	}
 }
@@ -689,10 +693,6 @@ p{
 		margin: 0;
 	}
 
-	.content-item{
-		min-width: none;
-	}
-
 	.content-title span{
 		font-size: 2.2rem;
 	}
@@ -715,18 +715,44 @@ p{
 }
 
 @media (max-width: 465px){
+	::-webkit-scrollbar{
+		width: 0px;
+	}
 	.side{
 		width: 100%;
 	}
-}
-
-
-@media (max-width: 420px){
 	.head-item{
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
 		max-width: 80px;
 		height: 80px;
+	}
+
+	.head-item p {
+		font-size: 0.8rem;
+	}
+
+	.content-box{
+		padding: 10px 10px 20px 10px;
+	}
+
+	.content-title span{
+		font-size: 1.9rem;
+	}
+
+	.content-inner{
+		gap: 1rem;
+	}
+	.content-item{
+		min-width: 0px;
+	}
+
+	.resume-title{
+		font-size: 1.3rem;
+	}
+
+	.contact-box{
+		margin-top: 2rem;
 	}
 }
