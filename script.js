@@ -1,3 +1,4 @@
+
 //SIDEBAR VARIABLES
 const toggles = document.querySelectorAll('.side-btn')
 const side = document.querySelector('.side')
