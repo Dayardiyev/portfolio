@@ -4,19 +4,34 @@
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no ">
-	<link rel="stylesheet" href="style.css">
+
+	<!--=============================== STYLE CSS ====================================-->
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">	<link rel="stylesheet" href="style.css">
+
+	
+	<!--=============================== GOOGLE FONT ====================================-->
+
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link
-		href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&display=swap"
-		rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+
+	<!--=============================== FONT AWESOME ====================================-->
+
 	<script src="https://kit.fontawesome.com/176ce5fa08.js" crossorigin="anonymous"></script>
-	<title>ProfileWebsite</title>
+
+
+	<!--=============================== FAVICON ====================================-->
+
+	<link rel="icon" type="image/x-icon" href="svg/user.svg">
+
+	<title>Portfolio</title>
 </head>
 
 <body>
-	<!-- SPRITES =========================================================================== -->
+
+	<!--=============================== SPRITES ====================================-->
 
 	<svg style="display: none;">
 		<symbol id="user">
@@ -61,18 +76,18 @@
 	</svg>
 
 
-	<!-- Main ============================================================================== -->
+	<!--=========================================== MAIN ====================================-->
 
 	<main class="main">
 		<div class="container">
 			<div class="main-inner">
-				<!-- Header ================================================================ -->
+				<!--=============================== HEAD ====================================-->
 				<div class="head">
 					<div class="head-box">
 						<div class="head-inner">
-							<div class="head-item head-item-color">
+							<div class="head-item active">
 								<form action="">
-									<a href="index.html"></a>
+									<!--<a href="index.html"></a>-->
 								</form>
 								<svg class="head-icon">
 									<use xlink:href="#user"></use>
@@ -81,7 +96,7 @@
 							</div>
 							<div class="head-item">
 								<form action="">
-									<a href="pages/resume.html"></a>
+									<!--<a href="pages/resume.html"></a>-->
 								</form>
 								<svg class="head-icon head-icon-s">
 									<use xlink:href="#note"></use>
@@ -90,7 +105,7 @@
 							</div>
 							<div class="head-item">
 								<form action="">
-									<a href="pages/works.html"></a>
+									<!--<a href="pages/works.html"></a>-->
 								</form>
 								<svg class="head-icon">
 									<use xlink:href="#box"></use>
@@ -99,7 +114,7 @@
 							</div>
 							<div class="head-item">
 								<form action="">
-									<a href="pages/contact.html"></a>
+									<!--<a href="pages/contact.html"></a>-->
 								</form>
 								<svg class="head-icon head-icon-s">
 									<use xlink:href="#contact"></use>
@@ -109,7 +124,8 @@
 						</div>
 					</div>
 				</div>
-				<!-- Side ========================================================================== -->
+				<!--=============================== SIDEBAR ====================================-->
+
 				<div class="side">
 					<div class="side-inner">
 						<div class="side-title">Alisher Dayardiyev</div>
@@ -124,7 +140,12 @@
 							<a href="https://www.instagram.com/dayardiyevv/" target="_blank" class="instagram">
 								<i class="fa-brands fa-instagram"></i></a>
 						</div>
+						
 						<div class="side-info-box">
+							<div class="side-display">
+								<label for="side-button"><i class="fa-solid fa-angle-down"></i></label>
+									<input type="checkbox" id="side-button" class="side-btn">
+							</div>
 							<div class="side-info-content">
 								<div class="side-info-icon">
 									<a href="tel:+77029437155"><img src="svg/Phone.svg" alt="" width="56px"
@@ -149,7 +170,7 @@
 										height="56px"></div>
 								<div class="side-info-text">
 									<p>Location</p>
-									<span>Nur-Sultan, Turkistan 34B</span>
+									<span>Nur-Sultan, Kazakhstan</span>
 								</div>
 							</div>
 							<div class="side-info-content">
@@ -163,8 +184,11 @@
 						</div>
 					</div>
 				</div>
-				<!-- Content =============================================================================== -->
-				<div class="content">
+				<!--=============================== CONTENT ===================================-->
+
+				<!--=========================== ABOUT ================================-->
+
+				<div class="content show">
 					<div class="content-box">
 						<div class="content-title content-title-about">
 							<span>About Me</span>
@@ -174,33 +198,174 @@
 							<p>I'm Developer from Nur-Sultan, Kazakhstan, studying in
 								software engineering. I enjoy turning complex problems into simple, beautiful and
 								intuitive designs.</p>
-							<!--<p>My aim is to bring across your message and identity in the most creative way.</p>-->
 						</div>
-						<div class="content-title content-title-h3">
-							<h3>What I do!</h3>
-						</div>
-						<div class="content-inner">
-							<div class="content-item">
-								<div class="content-icon"><img src="svg/content-icon1.svg" alt=""></div>
+						<div class="content-inner about">
+							<div class="content-item about">
+								<div class="content-icon"><i class="fa-solid fa-gears"></i></div>
 								<div class="content-item-text content-item-back">
 									<h3>Back-End</h3>
 									<li><span>Desktop Apps</span></li>
 									<li><span>Android Apps</span></li>
 									<li><span>Web server </span></li>
 									<li><span>Database </span></li>
-									<li><span>Cybersecurity </span></li>
 								</div>
 							</div>
-							<div class="content-item">
-								<div class="content-icon"><img src="svg/content-icon4.svg" alt=""></div>
+							<div class="content-item about">
+								<div class="content-icon blue"><i class="fa-solid fa-code"></i></div>
 								<div class="content-item-text content-item-front">
 									<h3>Front-End</h3>
 									<li><span>HTML & CSS</span></li>
 									<li><span>JavaScript</span></li>
 									<li><span>Web Designer</span></li>
 									<li><span>User Interface</span></li>
-									<li><span>Photoshop </span></li>
 								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!--=========================== RESUME ================================-->
+
+				<div class="content">
+					<div class="content-box content-resume">
+						<div class="content-title">
+							<span>Resume</span>
+							<div class="content-title-bar"><img src="svg/bar.svg" alt=""></div>
+						</div>
+						<div class="content-inner content-inner-resume">
+							<div class="resume-item-title">
+								<img src="svg/cap.svg" alt="">
+								<div class="resume-title resume-title-main">Education</div>
+							</div>
+							<div class="resume-item-title resume-item-exp">
+								<img src="svg/case.svg" alt="">
+								<div class="resume-title resume-title-main">Experience</div>
+							</div>
+							<div class="content-item content-item-resume">
+								<div class="content-item-text content-item-exp">
+									<p>2021 - Present</p>
+								</div>
+								<div class="content-item-title">Runtime<span> - Java</div>
+								<div class="content-item-text content-item-city">
+									<p>Nur-Sultan, Kazakhstan</p>
+								</div>
+							</div>
+							<div class="content-item content-item-resume">
+								<div class="content-item-title">Update Soon...</div>
+							</div>
+						</div>
+					</div>
+					<div class="content-box content-progress">
+						<div class="content-inner content-inner-resume-bottom">
+							<div class="resume-left">
+								<div class="resume-title resume-title-skill">Working Skills</div>
+								<div class="resume-item">
+									<div class="skill-info">
+										<div class="skill-name">Java</div>
+										<!--<div class="skill-percentage">85%</div>-->
+									</div>
+									<div class="skill-bar skill-bar-back">
+										<div class="progress-bar progress-bar-java"></div>
+									</div>
+								</div>
+								<div class="resume-item">
+									<div class="skill-info">
+										<div class="skill-name">HTML</div>
+										<!--<div class="skill-percentage">80%</div>-->
+									</div>
+									<div class="skill-bar skill-bar-web">
+										<div class="progress-bar progress-bar-html"></div>
+									</div>
+								</div>
+								<div class="resume-item resume-item-bottom">
+									<div class="skill-info">
+										<div class="skill-name">CSS</div>
+										<!--<div class="skill-percentage">80%</div>-->
+									</div>
+									<div class="skill-bar skill-bar-web">
+										<div class="progress-bar progress-bar-css"></div>
+									</div>
+								</div>
+							</div>
+							<div class="resume-right">
+								<div class="resume-title resume-title-skill">Knowledge</div>
+								<div class="resume-inner">
+									<!--<div class="resume-right-skills">Java</div>-->
+									<div class="resume-right-skills">Communication</div>
+									<div class="resume-right-skills">Print</div>
+									<div class="resume-right-skills">Social Media</div>
+									<div class="resume-right-skills">Flexibility</div>
+									<div class="resume-right-skills">Time Management</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!--=========================== WORKS =================================-->
+
+				<div class="content">
+					<div class="content-box content-works">
+						<div class="content-title">
+							<span>Portfolio</span>
+							<div class="content-title-bar"><img src="svg/bar.svg" alt=""></div>
+						</div>
+						<div class="content-inner content-inner-work">
+							<div class="content-item content-item-work">
+								<a href="https://github.com/Dayardiyev/FrostAuto" target="_blank" class="overlay"></a>
+								<a href="https://github.com/Dayardiyev/FrostAuto" target="_blank" class="gif frost"><img src="img/workGifs/frostAuto.gif" alt="" class="gif"></a>
+								<p>Online Shop</p>
+								<span>FrostAuto</span>
+							</div>
+							<div class="content-item content-item-work">
+								<a href="https://github.com/Dayardiyev/activeBox" target="_blank" class="overlay"></a>
+								<a href="https://github.com/Dayardiyev/activeBox" target="_blank" class="gif activeBox"><img src="img/workGifs/activeBox.gif" alt="" class="gif"></a>
+								<p>Project </p>
+								<span>ActiveBox</span>
+							</div>
+							<div class="content-item content-item-work">
+								<a href="https://github.com/Dayardiyev/HoverBoard" target="_blank" class="overlay"></a>
+								<a href="https://github.com/Dayardiyev/HoverBoard" target="_blank" class="gif hoverboard"><img src="img/workGifs/hoverboard.gif" alt="" class="gif"></a>
+								<p>Project </p>
+								<span>Hoverboard</span>
+							</div>
+							<div class="content-item content-item-work">
+								<a href="https://github.com/Dayardiyev/expandingCards" target="_blank" class="overlay"></a>
+								<a href="https://github.com/Dayardiyev/expandingCards" target="_blank" class="gif expandingCards"><img src="img/workGifs/expandingCards.gif" alt="" class="gif"></a>
+								<p>Project </p>
+								<span>Expanding Cards</span>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!--=========================== CONTACT ===============================-->
+				<div class="content">
+					<div class="content-box content-contact">
+						<div class="content-title">
+							<span>Contact</span>
+							<div class="content-title-bar"><img src="svg/bar.svg" alt=""></div>
+						</div>
+						<div class="contact-box">
+							<div class="contact-text">
+								<p>I am always open to discussing product<br>
+									<span>Design work or partnership.</span>
+								</p>
+							</div>
+							<div class="contact-input">
+								<p>Name *</p>
+								<input type="text" spellcheck="false">
+							</div>
+							<div class="contact-input">
+								<p>E-mail *</p>
+								<input type="email" spellcheck="false">
+							</div>
+							<div class="contact-input">
+								<p>Message *</p>
+								<textarea name="message"></textarea>
+							</div>
+							<div class="contact-button">
+								<button>Submit</button>
 							</div>
 						</div>
 					</div>
@@ -208,6 +373,7 @@
 			</div>
 		</div>
 	</main>
+	<script src="script.js"></script>
 </body>
 
 </html>

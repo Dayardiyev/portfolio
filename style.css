@@ -1,9 +1,14 @@
+
+
 *, *::before, *::after{
 	box-sizing: border-box;
 }
 
 body{
-	background: url(img/bg.jpg) no-repeat center center;
+	background: url(img/bg.jpg);
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-attachment:fixed;
 	background-color: #000;
 	background-size: cover;
 	margin: 0;
@@ -12,33 +17,28 @@ body{
 	overflow: overlay;
 }
 
+/* ======== Scrollbar ========= */
+
 ::-webkit-scrollbar{
 	width: 10px;
 	background-color: transparent;
 }
 
 ::-webkit-scrollbar-thumb{
-	background: rgba(0, 0, 0, 0.7);
+	background: rgba(0, 0, 0, 0.2);
 	border: 1px solid rgba(255, 255, 255, 0.2);
 	border-radius:25px;
 }
 
-::-webkit-scrollbar-thumb:hover{
-	background: rgba(0, 0, 0, 1);
-}
 
 p{
 	margin: 0;
 }
 
+/* ======== Main ========= */
+
 .main{
-	padding: 12.5rem 0 3.75rem 0;
-}
-.container{
-	margin: 0 auto;
-	max-width: 80.625rem;
-	padding: 0 10px;
-	height: 100%;
+	padding: 9.375rem 0 3.75rem 0;
 }
 
 .main-inner{
@@ -46,17 +46,28 @@ p{
 	grid-template-areas: 
 	"side head"
 	"side content";
-	gap: 0 40px;
+	gap: 10px 40px;
 }
+
+/* ======== Container ========= */
+
+.container{
+	margin: 0 auto;
+	max-width: 80.625rem;
+	padding: 0 10px;
+	height: 100%;
+}
+
+/* ======== -------- ========= */
 
 .head-box,
 .side, 
-.content{
+.content-box{
 	background-color: #000;
 	border-radius: 1rem;
 }
 
-/* Head =========================================================== */
+/* =============================== HEAD ==================================== */
 
 .head{
 	max-height: 9em;
@@ -88,26 +99,30 @@ p{
 	background: #212425;
 	border-radius: 0.75em;
 	color: #A6A6A6;
+	top: 0;
+	transition: 0.2s top ease;
+	cursor: pointer;
 }
 
 .head-item:hover{
 	background: #2f3335;
 	fill: #fff;
 	color: #fff;
+	top: -3px;
 }
 
 .head-item p{
 	margin: 0;
 }
 
-.head-item-color{
-	transition: 0.2s all ease-in-out;
+.head-item.active{
 	background: linear-gradient(153.43deg, #FA5252 16.67%, #DD2476 100%);
 	color: #fff;
 	fill: #fff;
 }
 
-.head-item-color:hover{
+.head-item.active:hover{
+	top: 0;
 	background: linear-gradient(153.43deg, #FA5252 16.67%, #DD2476 100%);
 }
 
@@ -131,10 +146,10 @@ p{
 }
 
 
-/* Side===================== */
+/* =============================== SIDEBAR ==================================== */
 
 .side{
-	width: 25em;
+	width: 405px;
 	max-height: 34.375rem;
 	grid-area: side;
 }
@@ -152,6 +167,7 @@ p{
 
 .side-title{
 	position: absolute;
+	text-transform: uppercase;
 	width: 100%;
 	height: 12%;
 	background-color: #111111;
@@ -160,7 +176,6 @@ p{
 	align-items: center;
 	border-top-left-radius: 1rem;
 	border-top-right-radius: 1rem;
-	font-family: 'Roboto Slab';
 	font-style: normal;
 	font-weight: 500;
 	font-size: 1.685rem;
@@ -181,8 +196,9 @@ p{
 	width: 8.75rem;
 	background: #111111;
 	border-radius: 0.5rem;
-	transition: .2s all;
 }
+
+/* ======== Social ========= */
 
 .side-social{
 	display: flex;
@@ -193,7 +209,9 @@ p{
 	height: 2.5em;
 	width: 2.5em;
 	background-color: #111111;
-	border-radius: 0.5rem;
+	border-radius: 0.8rem;
+	outline: 2px solid rgb(119, 119, 119);
+	transition-duration: 0.14s;
 }
 
 .side-social a i{
@@ -202,17 +220,27 @@ p{
 	font-size: 1.25rem;
 }
 
+.side-social a:hover{
+	outline-offset: 3px;
+}
+
+.side-social a:hover i{
+	animation: shake .5s;
+}
+
 .instagram:hover{
 	/*background: #C13584*/
-	background: radial-gradient(circle at 33% 100%, #fed373 4%, #f15245 30%, #d92e7f 62%, #9b36b7 85%, #515ecf)
+	background: radial-gradient(circle at 33% 100%, #fed373 4%, #f15245 30%, #d92e7f 62%, #9b36b7 85%, #515ecf);
+	outline-color: #d92e7f;
 }
 
 .telegram:hover{
 	background: #0088CC;
+	outline-color:#0088CC;
 }
 
-.twitter:hover{
-	background:#1DA1F2;
+.github:hover{
+	outline-color: #fff;
 }
 
 .side-social a:hover i{
@@ -223,7 +251,7 @@ p{
 	position: absolute;
 	bottom: 5%;
 	height: 20.625rem;
-	width: 85%;
+	width: 82%;
 	padding: 1.875rem;
 	border-radius: 1rem;
 	background: #111111;
@@ -241,11 +269,11 @@ p{
 	display: flex;
 }
 
-.side-info-content:nth-child(1){
+.side-info-content:nth-child(2){
 	padding: 0;
 }
 
-.side-info-content:nth-child(4){
+.side-info-content:last-child{
 	border: 0;
 }
 
@@ -260,17 +288,40 @@ p{
 	color: #fff;
 }
 
-/* Content ================================================================= */
+.side input,
+.side label{
+	display: none;
+}
+
+/* ======== Animation ========= */
+
+@keyframes shake{
+	10%{transform: rotate(15deg);}
+	20%{transform: rotate(-15deg);}
+	30%{transform: rotate(15deg);}
+	40%{transform: rotate(-15deg);}
+}
+
+/* =============================== CONTENT ==================================== */
 
 .content{
 	grid-area: content;
+	opacity: 0;
+	transform: translate(-5px, 0px);
+	transition: transform .2s ease-out;
+}
+
+.content.show{
+	opacity: 1;
+	transform: translate(0px, 0px);
+	z-index: 1;
 }
 
 .content-box{
-	max-width: 69.3125rem;
+	max-width: 70rem;
 	padding: 3.75rem;
+	
 }
-
 
 .content-title{
 	max-height: 3.125rem;
@@ -306,7 +357,7 @@ p{
 	margin-bottom: 1.875rem;
 }
 
-/* Content Inner */
+/* ======== Content Inner ========= */
 
 .content-inner{
 	margin-top: 1.875rem;
@@ -325,10 +376,25 @@ p{
 	gap: 10px 20px;
 }
 
+.content-item.about{
+	display: grid;
+	grid-template-columns: 16% 1fr;
+}
+
 .content-item-text h3{
 	margin: 0;
 	font-size: 1.75rem;
 	font-weight: 500;
+}
+
+.content-icon i {
+	font-size: 45px;
+	color: #D566FF;
+}
+
+.content-icon.blue i{
+	font-size: 40px;
+	color: #269FFF;
 }
 
 .content-item li{
@@ -347,7 +413,7 @@ p{
 	color: #269FFF;
 }
 
-/* Resume ======================================================================== */
+/* =============================== RESUME ==================================== */
 
 .content-inner-resume-bottom{
 	margin: 0;
@@ -375,7 +441,7 @@ p{
 }
 
 
-/* Resume LEFT */
+/* ======== Resume Left ========= */
 
 .resume-left{
 	display: flex;
@@ -384,6 +450,10 @@ p{
 
 .resume-item{
 	margin: 15px 0 1.875rem 0
+}
+
+.resume-item-bottom{
+	margin-bottom: 0;
 }
 
 .resume-title{
@@ -398,12 +468,12 @@ p{
 }
 
 
-/* Content Progress bottom */
+/* ======== Resume Left Progress ========= */
 
 .content-progress{
 	background: #0D0D0D;
-	border-bottom-left-radius: 16px;
-	border-bottom-right-radius: 16px;
+	border-top-left-radius: 0;
+	border-top-right-radius: 0;
 }
 
 .skill-info{
@@ -422,15 +492,19 @@ p{
 	border-radius: 18px;
 }
 
-.progress-bar-red{
-	background: #FF6464;
+.progress-bar-java{
+	background: #f89820;
 }
 
-.progress-bar-purple{
-	background: #9272D4;
+.progress-bar-html{
+	background: #f06529;
 }
 
-/* Resume RIGHT */
+.progress-bar-css{
+	background: #2965f1;
+}
+
+/* ======== Resume Right ========= */
 
 .resume-inner{
 	margin-top: 1.875rem;
@@ -447,7 +521,7 @@ p{
 	cursor: default;
 }
 
-/* Works ============================================= */
+/* =============================== WORKS ==================================== */
 
 .content-item-work{
 	max-width: 28.125rem;
@@ -456,43 +530,37 @@ p{
 	transition: all 0.2s ;
 }
 
-.content-item-work img{
-	image-rendering: optimizeQuality;
-	border-radius: 10px;
+.gif{
+	display: block;
 	width: 100%;
-}
-
-.content-item-content{
-	position: absolute;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
 	border-radius: 12px;
-	padding: 1.25rem;
-	left: 0;
-	top: 0;
-	width: 100%;
-	height: 100%;
-	background: linear-gradient(153.43deg, #FA5252 16.67%, #DD2476 100%);
-	transition: all .1s;
-	opacity: 0;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	font-size: 26px;
-	font-weight: 500;
-	cursor: pointer;
+	border: 0;
 }
 
-.content-item-content a{
+a.gif img{
+	border-radius: 12px;
+	visibility: hidden;
+	width: 100%;
+	border: 0;
+}
+
+.content-item-work:hover a{
+	background: none;
+}
+
+.content-item-work:hover a img{
+	visibility: visible;
+}
+.content-item-work .overlay{
 	position: absolute;
+	top: 0;
+	left: 0;
 	width: 100%;
 	height: 100%;
 }
-
-.content-item-work:hover .content-item-content{
-	opacity: 0.9;
-  	transform: scale(1.02);
-}
-
 
 .content-item-work p{
 	font-size: 12px;
@@ -503,15 +571,33 @@ p{
 	font-weight: 500;
 }
 
-/* Contact =============================================================================== */
+/* ======== Workshop Backgrounds ========= */
 
+.frost{
+	background-image: url(img/works/frost.png);
+}
+
+.activeBox{
+	background-image: url(img/works/ActiveBox.png);
+}
+
+.hoverboard{
+	background-image: url(img/works/hoverboard.png);
+}
+
+.expandingCards{
+	background-image: url(img/works/expandingCards.png);
+}
+
+
+
+/* =============================== CONTACT ==================================== */
 
 .contact-box{
-	margin-top: 50px;
-	max-width: 830px;
+	margin-top: 1.875rem;
 	max-height: 900px;
 	border: 2px solid #212425;
-	border-radius: 1.25rem;
+	border-radius: 12px;
 	padding: 60px 45px;
 	display: grid;
 	gap: 60px 0;
@@ -563,53 +649,16 @@ p{
 }
 
 
+/* =============================== MEDIA 1084 ==================================== */
 
+@media (max-width: 1084px){
 
-@media (max-width: 1110px){
+	/* ======== Main ========= */
+
 	.main{
 		padding: 3.125rem 0 3.75rem 0;
 	}
 
-	.main-inner{
-		display: grid;
-		grid-template-areas: 
-		"side head"
-		"content content";
-		gap: 10px;
-	}
-	
-	.side-title{
-		height: auto;
-	}
-	
-	.side-subtitle{
-		margin-top: 2.8125rem;
-	}
-
-	.side-info-box{
-		display: none;
-	}
-
-	.side-info-content{
-		border: 0;
-		padding: 0;
-	}
-
-	.side-info-text{
-		display: none;
-	}
-
-	.content-title-bar img{
-		width: 500px;
-	}
-
-	.content-inner{
-		grid-template-columns: 55% 45%;
-	}
-}
-
-
-@media (max-width: 1060px){
 	.main-inner{
 		display: grid;
 		grid-template-areas:
@@ -617,13 +666,19 @@ p{
 		"head"
 		"content";
 	}
+	
+	.container{
+		padding: 0;
+	}
+
+	/* ======== Head ========= */
 
 	.head{
 		display: block;
 	}
 
 	.head-box{
-		max-width: 63.125rem;
+		max-width: 100rem;
 	}
 
 	.head-item{
@@ -636,14 +691,130 @@ p{
 		margin-right: 10px;
 	}
 
+
+	/* ======== Sidebar ========= */
+
 	.side{
 		margin: 0 auto;
-		/*width: 50%;*/
-		height: 9.375rem;
+		height: 230px;
+		/*transition: height .2s ease-in-out;*/
 	}
+	
+	.side-title{
+		height: auto;
+	}
+	
+	.side-subtitle{
+		margin-top: 55px;
+	}
+
+	.side-info-box{
+		display: flex;
+		justify-content: center;
+		height: 58px;	
+		padding: 5px;
+	}
+
+	.side-info-content{
+		border: 0;
+		padding: 0;
+	}
+
+	.side-info-text{
+		display: none;
+	}
+	.side input{
+		display: none;
+	}
+
+	.side label{
+		display: block;
+	}
+
+	.side.active{
+		height: 485px;
+	}
+
+	/* ======== Sidebar arrow ========= */
+
+	.side-display{
+		position: absolute;
+		top: 17px;
+		right: 10px;
+		display: flex;
+		justify-content: center;
+		border-radius: 50%;
+		width: 25px;
+		height: 25px;
+		cursor: pointer;
+	}
+
+	.side-display i {
+		transition: transform .2s ease-out;
+		cursor: pointer;
+		color: #A6A6A6;
+	}
+
+	.side-display i:hover{
+		color: #fff;
+	}
+
+	.side.active .side-display i{
+		transform: rotate(180deg);
+		color: #fff;
+	}
+
+	.side.active .side-info-box{
+		flex-direction: column;
+		bottom: 5%;
+		height: 300px;
+		padding: 1.875rem;
+	}
+
+	.side.active .side-info-box .side-info-text{
+		display: block;
+	}
+
+	.side.active .side-info-box .side-info-content{
+		padding-top: 10px;
+		text-align: left;
+		display: grid;
+		grid-template-columns: 25% 75%;
+		border-bottom: 1px solid #3D3A3A;
+	}
+
+	.side.active .side-info-box .side-info-content:last-child{
+		border: 0;
+	}
+
+	/* ======== Content ========= */
+
+	.content{
+		display: none;
+	}
+
+	.content.show{
+		display: block;
+	}
+
+	.content-title-bar img{
+		width: 500px;
+	}
+
+	.content-inner{
+		grid-template-columns: 1fr 1fr;
+	}
+
 }
 
-@media (max-width: 850px){
+
+/* =============================== MEDIA 860 ==================================== */
+
+
+@media (max-width: 860px){
+
+	/* ======== Content ========= */
+	
 	.content-box{
 		padding: 1.875rem;
 	}
@@ -662,16 +833,30 @@ p{
 		min-width: 400px;
 	}
 
+	.content-title-bar img{
+		width: 350px;
+	}
+
+	/* ======== Content About ========= */
+
+	.content-item.about{
+		display: grid;
+		grid-template-columns: 15% 1fr;
+		min-width: 320px;
+		justify-content: start;
+		align-items: flex-start;
+	}
+
+	/* ======== Content Resume ========= */
+
 	.content-inner-resume{
 		justify-content: center;
 	}
 
-	.content-item-work{
-		align-items: flex-start;
-	}
+	/* Resume Left */
 
-	.content-title-bar img{
-		width: 350px;
+	.resume-left{
+		max-width: 90%;
 	}
 
 	.resume-item-exp{
@@ -681,17 +866,49 @@ p{
 	.content-inner-resume-bottom{
 		gap: 10px;
 	}
+
+	/* ======== Content Work ========= */
+
+	.content-item-work{
+		align-items: flex-start;
+	}
+
 }
 
+/* =============================== MEDIA 650 ==================================== */
+
 @media (max-width: 650px){
+
+	/* ======== Head ========= */
+
 	.head-box{
 		height: 100px;
-		padding: 10px;
+		padding: 25px 10px;
 	}
 
 	.head-icon{
 		margin: 0;
 	}
+
+	/* ======== Sidebar ========= */
+
+	.side{
+		height: 220px;
+	}
+
+	.side.active{
+		height: 475px;
+	}
+
+	.side-title{
+		font-size: 1.5rem;
+	}
+
+	.side-subtitle{
+		margin-top: 45px;
+	}
+
+	/* ======== Content ========= */
 
 	.content-title span{
 		font-size: 2.2rem;
@@ -705,33 +922,61 @@ p{
 		display: none;
 	}
 
+	/* ======== Resume ========= */
+
+	.resume-left{
+		max-width: 100%;
+	}
+
+	/* ======== CONTACT ========= */
+
 	.content-contact .contact-text {
 		font-size: 1.25rem;
 	}
 
-	.side-title{
-		font-size: 1.5rem;
-	}
 }
 
+/* =============================== MEDIA 465 ==================================== */
+
 @media (max-width: 465px){
+	
+	/* ======== Scrollbar ========= */
+
 	::-webkit-scrollbar{
 		width: 0px;
 	}
-	.side{
-		width: 100%;
+
+	/* ======== Main ========= */
+
+	.main{
+		padding: 40px 0;
 	}
+
+	/* ======== Head ========= */
+
+	.head-box{
+		padding: 10px;
+	}
+
+	.head-inner{
+		display: flex;
+		justify-content: center;
+	}
+	
 	.head-item{
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
 		max-width: 80px;
 		height: 80px;
+		flex: 1;
 	}
 
 	.head-item p {
 		font-size: 0.8rem;
 	}
+
+	/* ======== Content ========= */
 
 	.content-box{
 		padding: 10px 10px 20px 10px;
@@ -744,15 +989,126 @@ p{
 	.content-inner{
 		gap: 1rem;
 	}
-	.content-item{
+
+	/* ======== About ========= */
+
+	.content-item,
+	.content-item.about{
 		min-width: 0px;
 	}
+
+	.content-item.about{
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	/* ======== Resume ========= */
 
 	.resume-title{
 		font-size: 1.3rem;
 	}
 
+	/* ======== CONTACT ========= */
+
 	.contact-box{
 		margin-top: 2rem;
+		padding: 30px;
 	}
 }
+
+/* =============================== MEDIA 450 ==================================== */
+
+@media (max-width: 450px){
+
+	/* ======== Sidebar ========= */
+
+	.side{
+		max-width: 280px;
+		height: 210px;
+	}
+
+	.side-title{
+		font-size: 1.3em;
+	}
+	.side-subtitle{
+		margin-top: 45px;
+	}
+
+	.side-info-box{
+		height: 50px;
+	}
+
+	.side-info-content{
+		font-size: 10px;
+	}
+
+	.side-info-text p{
+		font-size: 0.8em;
+	}
+
+	.side-display{
+		height: 20px;
+		width: 20px;
+		font-size: 12.5px;
+		right: 5px;
+	}
+
+	.side-display i{
+		font-size: 12px;
+	}
+
+	.side-info-content .side-info-icon img{
+		width: 45px;
+		height: 45px;
+	}
+
+	.side.active{
+		height: 400px;
+	}
+	.side.active .side-info-box{
+		height: 230px;
+		padding: 10px;
+	}
+
+	.side.active .side-info-box .side-info-content{
+		padding-top: 10px;
+	}
+
+	.side.active .side-info-content .side-info-icon img{
+		width: 40px;
+		height: 40px;
+	}
+}
+
+/* =============================== MEDIA 350 ==================================== */
+
+@media(max-width: 350px){
+
+	/* ======= Head ============= */
+
+	.head-inner{
+		gap: 5px;
+	}
+
+	/* ======== Sidebar ========= */
+
+	.side{
+		height: 200px;
+	}
+
+	.side.active{
+		height: 390px;
+	}
+	.side-title{
+		font-size: 1em;
+	}
+
+	.side-subtitle{
+		margin-top: 40px;
+	}
+	.side-round{
+		font-size: 0.8em;
+	}
+}
+
