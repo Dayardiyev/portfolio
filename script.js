@@ -1,4 +1,3 @@
-
 //SIDEBAR VARIABLES
 const toggles = document.querySelectorAll('.side-btn')
 const side = document.querySelector('.side')
@@ -30,4 +29,5 @@ function removeActive(){
 	contents.forEach((content => content.classList.remove('show')))
 	head.forEach((header => header.classList.remove('active')))
 }
+
 
