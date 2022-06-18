@@ -150,7 +150,7 @@ p{
 
 .side{
 	width: 405px;
-	max-height: 34.375rem;
+	height: 555px;
 	grid-area: side;
 }
 
@@ -209,7 +209,7 @@ p{
 	height: 2.5em;
 	width: 2.5em;
 	background-color: #111111;
-	border-radius: 0.8rem;
+	border-radius: 0.7rem;
 	outline: 2px solid rgb(119, 119, 119);
 	transition-duration: 0.14s;
 }
@@ -246,6 +246,8 @@ p{
 .side-social a:hover i{
 	color: #fff;
 }
+
+/* ========= Side Info ========= */
 
 .side-info-box{
 	position: absolute;
@@ -699,6 +701,10 @@ a.gif img{
 		height: 230px;
 		/*transition: height .2s ease-in-out;*/
 	}
+
+	.side-inner{
+		gap: 15px;
+	}
 	
 	.side-title{
 		height: auto;
@@ -706,6 +712,35 @@ a.gif img{
 	
 	.side-subtitle{
 		margin-top: 55px;
+	}
+
+	/* ===== Social ===== */
+
+	.side-social a{
+		height: 42px;
+		width: 42px;
+		outline: none;
+		border: 2px solid rgb(119, 119, 119);
+	}
+
+	.side-social a i {
+		margin-top: 9px;
+	}
+
+	.side-social a:hover i{
+		animation: none;
+	}
+
+	.instagram:hover{
+		border: 2px solid #d92e7f;
+	}
+	
+	.telegram:hover{
+		border: 2px solid#0088CC;
+	}
+	
+	.github:hover{
+		border: 2px solid #fff;
 	}
 
 	.side-info-box{
@@ -893,11 +928,11 @@ a.gif img{
 	/* ======== Sidebar ========= */
 
 	.side{
-		height: 220px;
+		height: 225px;
 	}
 
 	.side.active{
-		height: 475px;
+		height: 480px;
 	}
 
 	.side-title{
@@ -905,7 +940,7 @@ a.gif img{
 	}
 
 	.side-subtitle{
-		margin-top: 45px;
+		margin-top: 50px;
 	}
 
 	/* ======== Content ========= */
@@ -1028,15 +1063,25 @@ a.gif img{
 		height: 210px;
 	}
 
+	.side.active{
+		height: 400px;
+	}
+
 	.side-title{
 		font-size: 1.3em;
 	}
+
 	.side-subtitle{
 		margin-top: 45px;
 	}
 
 	.side-info-box{
 		height: 50px;
+	}
+
+	.side.active .side-info-box{
+		height: 230px;
+		padding: 10px;
 	}
 
 	.side-info-content{
@@ -1063,14 +1108,6 @@ a.gif img{
 		height: 45px;
 	}
 
-	.side.active{
-		height: 400px;
-	}
-	.side.active .side-info-box{
-		height: 230px;
-		padding: 10px;
-	}
-
 	.side.active .side-info-box .side-info-content{
 		padding-top: 10px;
 	}
@@ -1085,7 +1122,7 @@ a.gif img{
 
 @media(max-width: 350px){
 
-	/* ======= Head ============= */
+	/* ======== Head ============ */
 
 	.head-inner{
 		gap: 5px;
@@ -1094,19 +1131,21 @@ a.gif img{
 	/* ======== Sidebar ========= */
 
 	.side{
-		height: 200px;
+		height: 190px;
 	}
 
 	.side.active{
-		height: 390px;
+		height: 380px;
 	}
+
 	.side-title{
 		font-size: 1em;
 	}
 
 	.side-subtitle{
-		margin-top: 40px;
+		margin-top: 35px;
 	}
+
 	.side-round{
 		font-size: 0.8em;
 	}
