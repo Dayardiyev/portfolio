@@ -214,7 +214,7 @@ p{
 	transition-duration: 0.14s;
 }
 
-.side-social a i{
+.side-social a svg{
 	color: #A6A6A6;
 	margin-top: 10px;
 	font-size: 1.25rem;
@@ -224,14 +224,15 @@ p{
 	outline-offset: 3px;
 }
 
-.side-social a:hover i{
-	animation: shake .5s;
-}
 
 .instagram:hover{
 	/*background: #C13584*/
 	background: radial-gradient(circle at 33% 100%, #fed373 4%, #f15245 30%, #d92e7f 62%, #9b36b7 85%, #515ecf);
 	outline-color: #d92e7f;
+}
+
+.instagram svg{
+	transform: scale(1.08);
 }
 
 .telegram:hover{
@@ -243,7 +244,7 @@ p{
 	outline-color: #fff;
 }
 
-.side-social a:hover i{
+.side-social a:hover svg{
 	color: #fff;
 }
 
@@ -293,15 +294,6 @@ p{
 .side input,
 .side label{
 	display: none;
-}
-
-/* ======== Animation ========= */
-
-@keyframes shake{
-	10%{transform: rotate(15deg);}
-	20%{transform: rotate(-15deg);}
-	30%{transform: rotate(15deg);}
-	40%{transform: rotate(-15deg);}
 }
 
 /* =============================== CONTENT ==================================== */
@@ -370,7 +362,7 @@ p{
 
 .content-item{
 	display: flex;
-	max-width: 21.875rem;
+	width: auto;
 	height: auto;
 	border-radius: 12px;
 	border: 2px solid #212425;
@@ -451,12 +443,12 @@ p{
 }
 
 .resume-item{
-	margin: 15px 0 1.875rem 0
+	margin: 15px 0 15px 0;
 }
 
-.resume-item-bottom{
+/*.resume-item-bottom{
 	margin-bottom: 0;
-}
+}*/
 
 .resume-title{
 	margin-left: 10px;
@@ -504,6 +496,10 @@ p{
 
 .progress-bar-css{
 	background: #2965f1;
+}
+
+.progress-bar-js{
+	background-color: #f0db4f;
 }
 
 /* ======== Resume Right ========= */
@@ -589,6 +585,18 @@ a.gif img{
 
 .expandingCards{
 	background-image: url(img/works/expandingCards.png);
+}
+
+.clock{
+	background-image: url(img/works/Clock1.png);
+}
+
+.faq{
+	background-image: url(img/works/FAQ.png);
+}
+
+.apple{
+	background-image: url(img/works/Apple.png);
 }
 
 
@@ -699,7 +707,6 @@ a.gif img{
 	.side{
 		margin: 0 auto;
 		height: 230px;
-		/*transition: height .2s ease-in-out;*/
 	}
 
 	.side-inner{
@@ -718,29 +725,7 @@ a.gif img{
 
 	.side-social a{
 		height: 42px;
-		width: 42px;
-		outline: none;
-		border: 2px solid rgb(119, 119, 119);
-	}
-
-	.side-social a i {
-		margin-top: 9px;
-	}
-
-	.side-social a:hover i{
-		animation: none;
-	}
-
-	.instagram:hover{
-		border: 2px solid #d92e7f;
-	}
-	
-	.telegram:hover{
-		border: 2px solid#0088CC;
-	}
-	
-	.github:hover{
-		border: 2px solid #fff;
+		width: 42px;	
 	}
 
 	.side-info-box{
